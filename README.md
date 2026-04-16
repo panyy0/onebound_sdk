@@ -99,6 +99,24 @@ OneBound SDK 本质上是一个**数据采集中间件**，介于业务代码和
 
 ## 快速开始
 
+### 环境变量配置
+
+所有 SDK 都支持通过环境变量传递 API 凭据，避免硬编码：
+
+```bash
+export ONEBOUND_KEY=your-key
+export ONEBOUND_SECRET=your-secret
+```
+
+也可以在项目根目录创建 `.env` 文件（已被 `.gitignore` 忽略）：
+
+```
+ONEBOUND_KEY=your-key
+ONEBOUND_SECRET=your-secret
+```
+
+> Python SDK 支持自动从环境变量读取 `ONEBOUND_KEY` 和 `ONEBOUND_SECRET`，构造时可省略 key/secret 参数。
+
 ### Java (Maven 引用)
 
 ```xml
@@ -211,6 +229,26 @@ print(results)
 
 ### 酒店旅游数据示例
 <!-- [此处贴图：携程/酒店数据示例] -->
+
+---
+
+## 测试
+
+```bash
+# Python - 单元测试（mock）
+cd onebound-python
+pip install -e .
+python -m unittest tests/test_client.py -v
+
+# Python - 集成测试（真实 API，需要 ONEBOUND_KEY 和 ONEBOUND_SECRET）
+python -m unittest tests/test_integration.py -v
+
+# Go - 单元测试（mock HTTP server）
+cd onebound-go
+go test ./... -v
+```
+
+> 集成测试会覆盖所有支持的 API 大类，每个大类随机选择一个平台进行 `item_search` 和 `item_get` 测试。未开通权限的平台会自动跳过。
 
 ---
 

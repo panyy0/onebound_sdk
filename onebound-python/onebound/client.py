@@ -1,3 +1,4 @@
+import os
 import requests
 from typing import Dict, Optional, Any, List
 from urllib.parse import urlencode
@@ -37,10 +38,10 @@ class OneBoundClient:
         "jingcheng"
     )
     
-    def __init__(self, platform: str, key: str, secret: str, api_url: str = None):
+    def __init__(self, platform: str, key: str = None, secret: str = None, api_url: str = None):
         self.platform = platform.lower()
-        self.key = key
-        self.secret = secret
+        self.key = key or os.environ.get("ONEBOUND_KEY", "")
+        self.secret = secret or os.environ.get("ONEBOUND_SECRET", "")
         self.api_url = api_url or self.API_URLS[0]
         self.cache = self.DEFAULT_CACHE
         self.result_type = self.DEFAULT_RESULT_TYPE
