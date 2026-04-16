@@ -99,23 +99,37 @@ OneBound SDK 本质上是一个**数据采集中间件**，介于业务代码和
 
 ## 快速开始
 
-### 环境变量配置
+### 获取 API Key 和 Secret
 
-所有 SDK 都支持通过环境变量传递 API 凭据，避免硬编码：
+通过[注册链接](http://console.open.onebound.cn/console/?i=c-46989)注册账号后，即可在控制台获得你的 API Key 和 Secret。
+
+### 配置凭据
+
+拿到 Key 和 Secret 后，根据你使用的语言，按以下方式配置：
+
+**方式一：环境变量（推荐，所有语言通用）**
 
 ```bash
 export ONEBOUND_KEY=your-key
 export ONEBOUND_SECRET=your-secret
 ```
 
-也可以在项目根目录创建 `.env` 文件（已被 `.gitignore` 忽略）：
+也可以在项目根目录创建 `.env` 文件（已被 `.gitignore` 忽略，不会提交到仓库）：
 
 ```
 ONEBOUND_KEY=your-key
 ONEBOUND_SECRET=your-secret
 ```
 
-> Python SDK 支持自动从环境变量读取 `ONEBOUND_KEY` 和 `ONEBOUND_SECRET`，构造时可省略 key/secret 参数。
+**方式二：直接传入构造函数**
+
+| 语言 | 示例 |
+|------|------|
+| Python | `OneBoundClient("taobao", "your-key", "your-secret")` |
+| Go | `onebound.NewClient("taobao", "your-key", "your-secret")` |
+| Java | `new OneBoundClient("taobao", "your-key", "your-secret")` |
+
+> **Python SDK** 支持从环境变量自动读取：如果构造时省略 key/secret，会自动从 `ONEBOUND_KEY` 和 `ONEBOUND_SECRET` 环境变量获取。Go 和 Java SDK 目前需要直接传入。
 
 ### Java (Maven 引用)
 
@@ -256,8 +270,7 @@ go test ./... -v
 
 **Q: 如何获取 API Key 和 Secret？**
 
-A: 点击下方邀请链接注册账号，开通 API 服务即可获得 key/secret：
-[**👉 点击这里获取 API Key**](http://console.open.onebound.cn/console/?i=c-46989)
+A：参见上方 [获取 API Key 和 Secret](#获取-api-key-和-secret) 章节。
 
 **Q: 接口调用频率有限制吗？**
 
