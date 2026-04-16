@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.onebound</groupId>
-    <artifactId>onebound-taobao-sdk</artifactId>
+    <groupId>io.github.panyy0</groupId>
+    <artifactId>onebound-sdk</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>OneBound Taobao SDK</name>
     <description>Unofficial SDK for OneBound Taobao API</description>
-    <url>https://github.com/onebound/onebound-sdk</url>
+    <url>https://github.com/panyy0/onebound_sdk</url>
 
     <licenses>
         <license>
@@ -24,14 +24,14 @@
     <scm>
         <connection>scm:git:git://github.com/onebound/onebound-sdk.git</connection>
         <developerConnection>scm:git:ssh://github.com/onebound/onebound-sdk.git</developerConnection>
-        <url>https://github.com/onebound/onebound-sdk</url>
+        <url>https://github.com/panyy0/onebound_sdk</url>
     </scm>
 
     <developers>
         <developer>
-            <id>onebound</id>
-            <name>OneBound Team</name>
-            <email>team@onebound.cn</email>
+            <id>panyy0</id>
+            <name>panyy0</name>
+            <email>panyy0@github.com</email>
         </developer>
     </developers>
 
