@@ -3,7 +3,7 @@ package onebound
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -125,7 +125,7 @@ func (c *Client) request(apiName string, params map[string]string) (map[string]i
 		}
 		defer resp.Body.Close()
 
-		body, err := ioutil.ReadAll(resp.Body)
+		body, err := io.ReadAll(resp.Body)
 		if err != nil {
 			lastErr = err
 			if attempt < c.retryCount-1 {
