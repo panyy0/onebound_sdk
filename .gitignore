@@ -27,3 +27,6 @@ Thumbs.db
 # Env
 .env
 *.log
+
+# Deploy
+onebound-java/settings-deploy.xml
