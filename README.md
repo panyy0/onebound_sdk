@@ -4,9 +4,9 @@
 
 **OneBound SDK** 是一个轻量级的跨语言数据采集工具，为开发者提供稳定、高效、易维护的电商与社媒数据获取方案。通过统一接口封装，支持 90+ 主流平台，一次集成即可在 Java / Go / Python 三种语言中自由调用。
 
-[![Maven Central](https://img.shields.io/maven-central/v/cn.onebound/onebound-sdk)]()
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.panyy0/onebound-sdk)]()
 [![PyPI](https://img.shields.io/pypi/v/onebound-sdk)]()
-[![Go Reference](https://pkg.go.dev/badge/github.com/onebound/onebound-go)]()
+[![Go Reference](https://pkg.go.dev/badge/github.com/panyy0/onebound-go)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)]()
 
 ---
@@ -135,7 +135,7 @@ ONEBOUND_SECRET=your-secret
 
 ```xml
 <dependency>
-    <groupId>cn.onebound</groupId>
+    <groupId>io.github.panyy0</groupId>
     <artifactId>onebound-sdk</artifactId>
     <version>1.0.0</version>
 </dependency>
@@ -167,7 +167,7 @@ public class Test {
 ### Go (go mod 引用)
 
 ```bash
-go get github.com/onebound/onebound-go
+go get github.com/panyy0/onebound-go
 ```
 
 **测试用例**
@@ -177,7 +177,7 @@ package main
 
 import (
     "fmt"
-    "onebound"
+    onebound "github.com/panyy0/onebound-go/onebound"
 )
 
 func main() {
