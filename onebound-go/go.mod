@@ -1,3 +1,3 @@
-module github.com/onebound/onebound-go
+module github.com/panyy0/onebound-go
 
 go 1.21
